@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <title>Teknologi 1: Læringsmål: Mini projekt</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+                $(function () {
+                        $("#tabs").tabs();
+                        $("#tabs-om-1")
+                                
+                        $( "#btnRun" ).click(function() 
+                        {
+                                $.ajax({url: "https://api.nationalize.io/?name="+encodeURIComponent($( "#navn" ).val()), success: function(result)
+                                {
+                                        $("#webresult").html("");
+                                        $.each(result.country, function (i) 
+                                        {
+                                        $.each(result.country[i], function (key, val) 
+                                        {
+                                                $("#webresult").append("<div>"+key+": "+val+"</div>");
+                                        });
+                        });
+                                }});
+                        });
+                });
+        </script>
+</head>
+
+<body>
+        <div id="tabs">
+                <ul>
+                        <li><a href="#start">Start</a></li>
+                        <li><a href="#om-1">Område 1</a></li>
+                        <div id="tabs-om-1"></div>
+                        <li><a href="#om-2">Område 2</a></li>
+                        <li><a href="#om-3">Område 3</a></li>
+                        <li><a href="#om-4">Område 4</a></li>
+                        <li><a href="#webs">Webservice</a></li>
+                </ul>
+                <div id="start">
+                        <p><b>Programmet arbejder med de 4 læringsmålsområder</b></p>
+                        <table>
+                                <tr>
+                                        <td>Område 1: Cloud, Operativ systemer, Database.</td>
+                                </tr>
+                                <tr>
+                                        <td>Område 2: Talsystemer, Debug. </td>
+                                </tr>
+                                <tr>
+                                        <td>Område 3: Samtidighedsproblematikker.</td>
+                                </tr>
+                                <tr>
+                                        <td>Område 4: Computernetværk.</td>
+                                </tr>
+                                <tr>
+                                        <td>Webservice: Test område af webservice</td>
+                                </tr>
+                        </table>
+                        <br />
+
+                        Mini projektet er udarbejdet af
+                        <br /><br />
+                        Jeres fuldenavne og KEA e-mail tilføj evt. gruppenavn.
+                        <br /><br />
+                        Afleveringsdato
+        
+                </div>
+                <div id="om-1">
+                        <p>Spørgsmål</p><br/><br/>
+                        1.Beskriv en computers hardware.<br/><br/>
+                        2.Beskriv Azure Cloud og hvad du kan bruge den til.<br/><br/>
+                        3.Hvilke typer harddiske findes i en computer og hvad er forksllen på dem?<br/><br/>
+                        4.Hvilke typer busser findes der i en computer?<br/><br/>
+                        5.Hvad er forskellen på en IP og MAC adresse i computer netværk?<br/><br/>
+                        6.Hvilke typer kategorier findes der for en psu og hvad betyder de?<br/><br/>
+                        7.Hvad er forskellen mellem ram og harddisk?<br/><br/>
+                        8.Hvad er et DBMS?<br/><br/>
+
+
+                        <p>Svar: <br>
+                        1. En computer består af et Motherboard, Cpu, Psu, Ram, HDD, evt. Gpu(grafikkort) 
+                        <br>
+                        2. Azure cloud er en cloud service, hvor du f.eks. kan simuluere en computer, database mm. Der er ca. 200 forskellige services du kan bruge cloud til. En cloud service hovedformål er at dit It ligger i skyen altså online, og ikke lokalt på din pc. 
+                        <br>
+                        3. Der findes HDD(SATA), SDD og NVME. Den mest brugte hard drive er HDD eller SATA hvor du får meget plads for lidt penge, dog er den ikke så hurtig.
+                        <br>
+                        SDD står for solid state drive den mest betydelig forskel på HDD OG SDD er at SDD er somregel hurtigere men dyrere.
+                        <br>
+                        NVME står for "non volatile Memory Express" og er en anden type af SDD. NVMe'en sidder på PCIe slottet på ens motherboard. Fordelen ved NVME er at det er den hurtigeste form for Hard drive men er en del dyrere end SDD og HDD. NVMen kan kun bruges på stationær computere, da det bruger et PCIe slot som oprindligt bliver brugt til grafikkort.
+                        <br>
+                        4. Der findes 3 forskellige busser når man snakker om computeren, interne busser eller databusser, hukommelsebusser og systembus.
+                        <br>
+                        5. En IP repræsenterer en netværks adresse. Hvor en MAC adresse repræsenterer den individuelle bruger på det netværk.
+                        <br>
+                        6.NO IDEA
+                        <br>
+                        7. RAM
+                        <br>
+                        8. En DBMS står for database management system. Et eksempel på det er MYSQL. Hvilket er et program der kan styre databaser og administrere databaser.
+                        <br>
+                                </p>
+                </div>
+                <div id="om-2">
+                        <p>
+                             1.Hvad bruges DNS til ift. Computer netværk? <br>
+                             <bR>
+                              - DNS står for Domain Name System, som er et kæmpe onlinebibliotek der er ansvarlig for at tage et websteds domænenavn (eller URL) og oversætte det til en IP (Internet Protocol)-adresse. 
+                                <br> <br>
+                             2. Kan man se hvilke data der kommer til og fra en webside? Hvis ja hvordan?
+                             <br><br>
+                             -Hvis du gerne vil se data fra og til en hjemmeside kan du b.la. bruge Inspect værktøjet i din browser, f.eks. i Google Chrome. I inspect værktøjet kan du gå under network og se hvilke data “pakker” der kommer til og fra hjemmesiden, f.eks. Billeder, Javascripts, Cookies, status code mm.
+                                <br><br>
+                             3. Hvordan kan man kende forskel på Ipv4 og Ipv6?
+                             <br><br>
+                             Ipv4 er den fjerde version af internet protokol og er basis for vores nuværende internet. Ipv4 kan have en værdi fra 0 til 255 og benytter sig af 32-bit adresse. En 32-bit adresse betyder at der mellem hver punktum, er 8 bits der repræsentere en tal i binært format. En ipv4 adresse ser typisk sådan ud i binært format: 11000000.10101000.00001010.00000001 som kan blive oversat til 192.168.10.1. Begge måder at skrive ipv4 adressen på er rigtige, da de betyder det samme.
+
+
+Ipv6 er den sjette version af internet protokol og er bedre end ipv4 på alle parametre. Ipv6 benytter sig af en 128-bit længde hvilket betyder at der er 16-bits fordelt mellem hver punktum 9 gange. En anden betydelig forskel fra sin lillebror ipv4, er at ipv6 typisk bliver skrevet som en hexadecimal adresse, som typisk indeholder bogstaver. En ipv6 kan se sådan ud: 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
+
+	Man kan derfor nemt se forskel på ipv4 og ipv6 ved at kigge på størrelsen er stregen samt om der er bogstaver i eller ej.
+<br> <br>
+                             4. Vis eller beskriv de kommandoer du kender ift. netværk som kan bruges i et terminal-vindue. Det kan f.eks. være ”ping” kommandoen.
+                             <br><br>
+                             i kommandoprompt kan du bl.a. bruge “ping” kommandoen til at teste din forbindelse samt tilgængelighed af siden du pinger. Når du pinger en hjemmesiden, sender den 4 packages afsted med pre-written data. 
+
+Ping er et kommandolinjeværktøj, tilgængeligt på stort set alle operativsystemer med netværkstilslutning, der fungerer som en test for at se, om en netværksenhed er tilgængelig. Ping-kommandoen sender en anmodning over netværket til en bestemt enhed. Et vellykket ping resulterer i et svar fra den computer, der blev pinget tilbage til den oprindelige computer.
+
+En anden kommando man kan bruge til at teste netværksenheder tilsluttet til din computer, er ipconfig. Med ipconfig får du et overblik over alle netværksadaptere tilsluttet til din pc, du vil b.la. kunne se ipv4 og ipv6 adresse samt subnet mask. 
+
+    
+                        </p>
+                </div>
+                <div id="om-3">
+                        <p>Spørgsmål og svar</p>
+                </div>
+                <div id="om-4">
+                        <p>Spørgsmål og svar</p>
+                </div>
+                <div id="webs">
+                        <table>
+                                <tr>
+                                        <td>Navn</td><td style="padding-left: 20px;padding-right: 20px;"><input id="navn" alt="Klik på knappen og se svaret fra webserveren" title="Klik på knappen og se svaret fra webserveren"></td><td><button id="btnRun">Test webservice</button></td>
+                                </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <b>Svar fra webservice</b>
+                        <div id="webresult"></div>
+                </div>
+
+        </div>
+
+</body>
+
+</html>
